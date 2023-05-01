@@ -16,7 +16,14 @@ const UserSchema = new mongoose.Schema({
     },
     age: {
         type: Number
-    }
+    },
+    // array of ids that reference the posts that user has made
+    posts: [{
+        // tell mongoose that this a refernce
+        type: mongoose.Schema.Types.ObjectId,
+        // tell mongoose what document is being referenced
+        ref: "Post"
+    }]
 }, {
     timestamps: true
 })

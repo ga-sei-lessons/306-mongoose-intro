@@ -17,5 +17,6 @@ db.on("error", err => console.log('💥 the datacenter has exploded:', err))
 // export all models
 module.exports = {
     // export our models here
-    User: require("./User")
+    User: require("./User"),
+    Post: require("./Post")
 }
