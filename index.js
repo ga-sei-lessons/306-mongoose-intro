@@ -45,26 +45,26 @@ const userCrud = async () => {
         // findOneAndUpdate({what to search for}, {what you want to update}, {options})
         const updatedUser = await db.User.findOneAndUpdate(
             { name: "April" },
-            { email: "April@ga.com" },
-            { new: true } // option to return a model instance
+            { email: "AprilG@ga.com" },
+            // { new: true } // option to return a model instance
         )
 
         console.log(updatedUser.name, updatedUser.email)
 
         // upsert Update or Insert
-        const upsertWeston = await db.User.findOneAndUpdate(
-            { name: "Weston" },
-            { email: "wb@ga.com", isAdmin: false, age: 35 },
-            { new: true, upsert: true } // if user is not found, create
-        )
-        console.log(upsertWeston.name, upsertWeston.isAdmin)
-        // DESTROY
-        // findByIdAndDelete findOneAndDelete
-        const deletedUser = await db.User.findOneAndDelete({
-            name: "Weston"
-        })
+        // const upsertWeston = await db.User.findOneAndUpdate(
+        //     { name: "Weston" },
+        //     { email: "wb@ga.com", isAdmin: false, age: 35 },
+        //     { new: true, upsert: true } // if user is not found, create
+        // )
+        // console.log(upsertWeston.name, upsertWeston.isAdmin)
+        // // DESTROY
+        // // findByIdAndDelete findOneAndDelete
+        // const deletedUser = await db.User.findOneAndDelete({
+        //     name: "Weston"
+        // })
 
-        console.log(deletedUser)
+        // console.log(deletedUser)
     } catch (err) {
         console.log(err)
     }
